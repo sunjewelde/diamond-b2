@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# coding: utf-8
+require "csv"
 CSV.foreach('db/price.csv') do |row|
   History.create(:date => row[0], :weight => row[1], :color => row[2], :clar => row[3], :list_price => row[4])
 end
